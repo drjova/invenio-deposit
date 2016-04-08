@@ -101,6 +101,9 @@ setup(
             'invenio_deposit_rest_actions = invenio_files_rest.views.rest'
             ':blueprint',
         ],
+        'invenio_assets.bundles': [
+            'invenio_deposit_js = invenio_deposit.bundles:js',
+        ],
         'invenio_i18n.translations': [
             'messages = invenio_deposit',
         ],
