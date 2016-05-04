@@ -35,6 +35,7 @@ tests_require = [
     'check-manifest>=0.25',
     'coverage>=4.0',
     'invenio-accounts>=1.0.0a9',
+    'invenio-assets>=1.0.0a5',
     'isort>=4.2.2',
     'psycopg2>=2.6.1',
     'pydocstyle>=1.0.0',
@@ -68,6 +69,7 @@ install_requires = [
     'SQLAlchemy-Utils[encrypted]>=0.31.0',
     'dictdiffer>=0.5.0.post1',
     'elasticsearch-dsl>=2.0.0',
+    'invenio-assets>=1.0.0a5',
     'invenio-db[versioning]>=1.0.0a9',
     'invenio-files-rest>=1.0.0a4',
     'invenio-indexer>=1.0.0a2',
@@ -116,8 +118,10 @@ setup(
             ' = invenio_deposit.permissions:action_admin_access',
         ],
         'invenio_assets.bundles': [
-            'invenio_deposit_js = invenio_deposit.bundles:js',
             'invenio_deposit_css = invenio_deposit.bundles:css',
+            'invenio_deposit_js = invenio_deposit.bundles:js',
+            'invenio_deposit_dependencies_js = invenio_deposit.bundles:'
+            'js_dependecies',
         ],
         'invenio_i18n.translations': [
             'messages = invenio_deposit',

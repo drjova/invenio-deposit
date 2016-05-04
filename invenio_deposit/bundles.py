@@ -33,13 +33,13 @@ css = Bundle(
     output='gen/deposit.%(version)s.css',
 )
 
-js = NpmBundle(
+js_dependecies = NpmBundle(
     'node_modules/angular/angular.js',
     'node_modules/angular-sanitize/angular-sanitize.js',
     'node_modules/angular-animate/angular-animate.js',
     'node_modules/angular-strap/dist/angular-strap.js',
     'node_modules/angular-strap/dist/angular-strap.tpl.js',
-    'node_modules/underscore/underscore-min.js',
+    'node_modules/underscore/underscore.js',
     'node_modules/angular-underscore/index.js',
     'node_modules/ui-select/dist/select.js',
     'node_modules/angular-translate/dist/angular-translate.js',
@@ -50,9 +50,10 @@ js = NpmBundle(
     'node_modules/angular-schema-form-dynamic-select/'
     'angular-schema-form-dynamic-select.js',
     'node_modules/invenio-records-js/dist/invenio-records-js.js',
-    'js/invenio_deposit/app.js',
+    'node_modules/ng-file-upload/dist/ng-file-upload-all.js',
+    'node_modules/invenio-files-js/dist/invenio-files-js.js',
     filters='jsmin',
-    output='gen/deposit.%(version)s.js',
+    output='gen/deposit.dependencies.%(version)s.js',
     npm={
         'almond': '~0.3.1',
         'angular': '~1.4.9',
@@ -65,8 +66,19 @@ js = NpmBundle(
         'angular-translate': '~2.11.0',
         'angular-schema-form': '~0.8.13',
         'angular-schema-form-dynamic-select': '~0.13.1',
-        'invenio-records-js': '~0.0.1',
+        'invenio-files-js': '~0.0.1',
+        'invenio-records-js': '~0.0.2',
+        'angular': '~1.4.10',
+        'angular-sanitize': '~1.4.10',
+        'angular-schema-form': '~0.8.13',
         'objectpath': '~1.2.1',
         'tv4': '~1.2.7',
     },
+)
+
+
+js = Bundle(
+    'js/invenio_deposit/app.js',
+    filters='jsmin',
+    output='gen/deposit.%(version)s.js',
 )
